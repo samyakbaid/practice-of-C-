@@ -31,42 +31,39 @@ void rotateArray(int *a, int n, int rot ){
 int main() {
      srand(time(NULL));
     int s[26];
-    for(int i=0;i<26;i++){
-        s[i]=i;
-        printf("%d\n", s[i]);
-    }
+    
 
      FILE *ptr;
      FILE *ptr2;
     ptr = fopen("abd.txt", "r");
-    ptr2 = fopen("abc.txt", "r");
+    ptr2 = fopen("abc.txt", "w");
     if (ptr == NULL) {
         printf("file failed to open");
         return 1;
     }
 
     char c;
-    int s[26];
-    for (int i = 0; i < 27; i++) {
+    for (int i = 0; i < 26; i++) {
         s[i] = i;
     }
-    while ((c = fgetc(ptr)) != EOF){
 
-    }
+    // while ((c = fgetc(ptr)) != EOF){
 
+    // }
+    // shuffleArray(s,26);
+    rotateArray(s,26,5);
     while ((c = fgetc(ptr)) != EOF) {
         if(c>='a' && c<='z'){
             c= 'a' + s[c -'a'];
         }
-
-     fputc(c, ptr2);
+        fputc(c, ptr2);
     }
      
-    // shuffleArray(s,26);
-    rotateArray(s,26,3);
-    for(int i=0;i<26;i++){
-        printf("%d\n", s[i]);
-    }
+    
+    
+    // for(int i=0;i<26;i++){
+    //     printf("%d\n", s[i]);
+    // }
     return 0;
 
 }

@@ -13,7 +13,7 @@ int main() {
 
     char c;
     int *a;
-    a = malloc(27 * sizeof(int));  // this is long for int a[27]
+    a = malloc(27 * sizeof(int));  // this is long for int a[27] and allows dynamic 
     for (int i = 0; i < 27; i++) {
         a[i] = 0;
     }
